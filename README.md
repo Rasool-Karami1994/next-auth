@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Authentication Project with Next.js, TypeScript, and SCSS Modules
+
+This project implements a simple authentication system with two main pages:
+
+- **Auth page (`/auth`)** – Login form with Iranian phone number validation  
+- **Dashboard page (`/dashboard`)** – Welcomes the authenticated user and displays user info
+
+The user data is fetched from the [randomuser.me API](https://randomuser.me) and stored in `localStorage`.
+
+---
+
+## Features
+
+- Login form with phone number validation (Iranian format)  
+- Fetches random user data via API request  
+- Stores user information in localStorage  
+- Redirects to dashboard upon successful login  
+- Dashboard protects against unauthorized access  
+- Responsive design for different screen sizes  
+- Uses Next.js (App Router), TypeScript, and SCSS Modules  
+- Displays success and error notifications with [react-hot-toast](https://react-hot-toast.com)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (>=16.x recommended)  
+- npm or yarn package manager
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+npm install
+````
+
+### Running Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+* `src/app/auth` – Authentication page
+* `src/app/dashboard` – Dashboard page
+* `src/components` – Reusable components (Input, Button, etc.)
+* `src/styles` – SCSS module files and variables
+* `src/app/layout.tsx` – Root layout including toast notifications
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+* [Next.js](https://nextjs.org) (App Router)
+* [TypeScript](https://www.typescriptlang.org)
+* [Sass / SCSS](https://sass-lang.com) with CSS Modules
+* [react-hot-toast](https://react-hot-toast.com) for notifications
+* [randomuser.me](https://randomuser.me) API for user data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Important Notes
+
+* External images from randomuser.me are configured in `next.config.js`
+* Phone number input is validated via regex but not used for authentication
+* User data is persisted in localStorage for session management
+* Root page (`/`) redirects users based on authentication status
+
+---
+
+## Demo
+
+[Live Demo Link](https://your-demo-url-here.com)
+
+---
+
+## Contact
+
+Feel free to reach out for questions or feedback:
+
+* Email: [rasoolkarami2304@gmail.com](mailto:rasoolkarami2304@gmail.com)
+* LinkedIn: [https://www.linkedin.com/in/rasool-karami2304/](https://www.linkedin.com/in/rasool-karami2304/)
+
+---
+
+Thank you for checking out this project!

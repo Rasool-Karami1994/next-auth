@@ -1,0 +1,20 @@
+@use "@/styles/variables" as *;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $bg-color;
+
+  .form {
+    width: 100%;
+    padding: 50px 20px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: $secondary-bg-color;
+    height: 220px;
+    border-radius: 24px;
+  }
+}

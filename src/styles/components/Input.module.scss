@@ -1,0 +1,31 @@
+@use "@/styles/variables" as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .input {
+    padding: 0.75rem;
+    border: 1px solid #cccbcb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: $text-color;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #888;
+      font-size: 14px;
+    }
+
+    &:focus {
+      border-color: $secondary-color;
+    }
+  }
+
+  .error {
+    color: $danger-color;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+}

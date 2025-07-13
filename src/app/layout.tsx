@@ -16,8 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Toaster reverseOrder={false} position="bottom-right" />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Toaster reverseOrder={false} position="bottom-right" />
+      </body>
     </html>
   );
 }

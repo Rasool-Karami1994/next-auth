@@ -30,7 +30,12 @@ export default function Dashboard() {
   }, []);
 
   if (isLoading) {
-    return <div className={styles.loading}>Loading</div>;
+    return (
+      <div className={styles.loading}>
+        Loading
+        <div className={styles.spinner}></div>
+      </div>
+    );
   }
 
   if (error) {

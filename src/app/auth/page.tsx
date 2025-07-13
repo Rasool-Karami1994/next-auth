@@ -4,6 +4,7 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import styles from "@/styles/Auth.module.scss";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function AuthPage() {
   const [phone, setPhone] = useState("");
@@ -19,11 +20,22 @@ export default function AuthPage() {
       setError("Invalid Phone number (example: 09199975964)");
       return;
     }
+    try {
+      const res = await fetch("https://randomuser.me/api/?results=1&nat=us");
+      const data = await res.json();
+      const user = data.results[0];
 
-    const res = await fetch("https://randomuser.me/api/?results=1&nat=us");
-    const data = await res.json();
-    localStorage.setItem("user", JSON.stringify(data.results[0]));
-    router.push("/dashboard");
+      localStorage.setItem("user", JSON.stringify(user));
+      toast.success(`welcome Dear ${user.name.title}`);
+
+      router.push("/dashboard");
+
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1500);
+    } catch {
+      toast.error("Login Error! try again please");
+    }
   };
 
   return (
